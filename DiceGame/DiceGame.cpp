@@ -23,6 +23,9 @@ class Dice
         int FaceValue(){
             return faceValue;
         }
+        void FaceValue(int value){
+            if ((value > 0) && (value < 7)) faceValue = value; 
+        }
 };
 
 class DiceGame
@@ -48,7 +51,7 @@ int main()
 {
     DiceGame game;
     int result = game.play();
-
+    
     cout << "Dice game" << endl;
 
 #ifdef FIRST_ITER
