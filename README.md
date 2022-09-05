@@ -1,2 +1,4 @@
 # PRG22107
-Repositório para o trabalho final da unidade curricular de Programação Orientada a Objetos
+Repositório para a unidade curricular de Programação Orientada a Objetos.
+
+Nele será colocado as atividades durante o semestre e o trabalho final.
