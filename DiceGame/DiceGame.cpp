@@ -1,9 +1,8 @@
 #include <iostream>
 #include <chrono>
 
-#define FIRST_ITER
-#define SHOW_RESULTS
-// #define DEBUG
+//#define SHOW_RESULTS // Mostra os resultados a cada jogo (não usar junto com DEBUG)
+#define DEBUG  // DEBUG faz o teste de 10 milhões de iterações
 
 using namespace std;
 
@@ -15,16 +14,16 @@ class Dice
         Dice() {
             srand(time(NULL));
             roll();
-            cout << this << " with a value of " << faceValue << endl;
+            cout << this << " with a value of " << faceValue << endl; // this mostra o endereço 
         }
         void roll() {
             faceValue = (rand() % 6) + 1;
         }
-        int FaceValue(){
-            return faceValue;
+        int FaceValue(){ 
+            return faceValue; // getter method
         }
         void FaceValue(int value){
-            if ((value > 0) && (value < 7)) faceValue = value; 
+            if ((value > 0) && (value < 7)) faceValue = value; // setter method 
         }
 };
 
@@ -54,9 +53,7 @@ int main()
     
     cout << "Dice game" << endl;
 
-#ifdef FIRST_ITER
     cout << (result == 7 ? "Won " : "Lost ") << "with a roll of " << result << endl;
-#endif
 
 #ifdef DEBUG
     auto start = chrono::steady_clock::now();
