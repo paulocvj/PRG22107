@@ -10,7 +10,8 @@ int main()
     vector<int> vec;
     vector<int>::iterator i;
 
-    while (x != -2147483648) {
+    while (x != -2147483648)
+    {
         cin >> x;
         vec.push_back(x);
     }
