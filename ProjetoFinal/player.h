@@ -8,8 +8,11 @@ class Player
     public:
         void addPoints();
         int getPoints();
+        int getId();
+        void setId(int i);
     private:
         int points = 0;
+        int id;
 };
 
 #endif

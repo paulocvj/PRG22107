@@ -17,7 +17,14 @@ void Dealer::turnBoardCards()
 
 int Dealer::dealCard()
 {
-    return gameCards[2];
+    int cardToReturn;
+    for (int i = 2; i < gameCards.size() - 2; i++)
+        if (gameCards[i] != 0) {
+             cardToReturn = gameCards[i];
+             gameCards[i] = 0;
+             return cardToReturn;
+        }
+    return -1;
 }
 
 bool Dealer::checkBetween(int cardToCheck)

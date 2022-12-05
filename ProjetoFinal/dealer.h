@@ -13,7 +13,7 @@ class Dealer
         int dealCard();
         bool checkBetween(int cardToCheck);
     private:
-        std::array<int, 3> gameCards = {0, 0, 0};
+        std::array<int, 10> gameCards = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 };
 
 #endif

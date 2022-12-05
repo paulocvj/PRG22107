@@ -11,7 +11,9 @@
 class Game
 {
     public:
-        void start();
+        void init();
+        void dealerTurn(Dealer &dealer, Deck &deck, int round, int numPlayers);
+        void playersTurn(Dealer &dealer, Deck &deck, Player &player, int round, int playerId);
         void playRound(Deck &deck, Player &player, int round);
     private:
         int cardReceived;

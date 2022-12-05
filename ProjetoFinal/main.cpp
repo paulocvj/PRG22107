@@ -8,7 +8,7 @@
 int main()
 {
     Game game;
-    game.start();
+    game.init();
 
     return 0;
 }
