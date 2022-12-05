@@ -22,7 +22,7 @@ O jogador, quando escolhe que sua carta está entre as duas cartas da mesa, pont
 O jogador, quando escolhe que sua carta NÃO está entre as duas cartas da mesa, pontua somente quando:
 - A sua carta é menor ou igual a mínima e maior ou igual a máxima (carta <= min | carta >= máx).
 
-A ordem das cartas segue o padrão onde o ás é a menor carta (valendo 1), e o rei é a maior carta (valendo 13).
+A ordem das cartas segue o padrão onde o dois é a menor carta (valendo 2), e o ás é a maior carta (valendo 14).
 
 ### Exemplo de jogo
 
