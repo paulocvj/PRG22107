@@ -6,12 +6,6 @@
 #include "cards.h"
 #include "deck.h"
 
-Deck::Deck()
-{
-    Cards cards;
-    build();
-}
-
 void Deck::build()
 {
     Cards cards;
@@ -49,4 +43,27 @@ void Deck::shuffle()
     std::mt19937 g(device());
 
     std::shuffle(array.begin(), array.end(), g);
+}
+
+void Deck::getArrPos(int num)
+{
+    std::cout << array[num-1].num << " de " << array[num-1].suit << std::endl;
+}
+
+void Deck::popArr()
+{
+    for (int i = 0; i < 52; i++){
+        if (array[i].num != 0){
+            array[i].num = 0;
+            return;
+        } 
+    }
+}
+
+int Deck::giveCard()
+{
+    for (int i = 0; i < 52; i++){
+        if (array[i].num != 0) return array[i].num;
+    }
+    return 0;
 }

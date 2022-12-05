@@ -5,33 +5,32 @@
 
 class Cards {
     public:
+        enum suits
+        {
+            PAUS = 0,
+            COPAS,
+            ESPADAS,
+            OURO
+        };
 
-    enum suits
-    {
-        PAUS = 0,
-        COPAS,
-        ESPADAS,
-        OURO
-    };
+        enum values
+        {
+            DOIS = 2,
+            TRES,
+            QUATRO,
+            CINCO,
+            SEIS,
+            SETE,
+            OITO,
+            NOVE,
+            DEZ,
+            VALETE,
+            DAMA,
+            REI,
+            AS
+        };
 
-    enum values
-    {
-        DOIS = 2,
-        TRES,
-        QUATRO,
-        CINCO,
-        SEIS,
-        SETE,
-        OITO,
-        NOVE,
-        DEZ,
-        VALETE,
-        DAMA,
-        REI,
-        AS
-    };
-
-    void printCards();
+        void printCards();
 };
 
 #endif

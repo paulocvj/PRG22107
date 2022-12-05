@@ -1,12 +1,14 @@
 #include <iostream>
+
 #include "cards.h"
 #include "deck.h"
+#include "dealer.h"
+#include "game.h"
 
 int main()
 {
-    Deck deck;
-    deck.build();
-    deck.shuffle();
-    deck.printDeck();
+    Game game;
+    game.start();
+
     return 0;
 }
