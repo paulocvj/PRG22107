@@ -4,6 +4,7 @@
 #include <iostream>
 #include <array>
 #include <queue>
+#include <vector>
 
 #include "cards.h"
 
@@ -23,6 +24,7 @@ class Deck
         int giveCard();
     private:
         std::array<arrCards, 52> array;
+        //std::vector<arrCards> array;
 };
 
 #endif

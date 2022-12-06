@@ -8,7 +8,8 @@
 int main()
 {
     Game game;
-    game.init();
+    
+    while (!game.init());
 
     return 0;
 }

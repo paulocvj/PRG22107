@@ -1,11 +1,10 @@
 #include <iostream>
 #include "game.h"
 
-void Game::init()
+int Game::init()
 {
     Deck deck;
     Dealer dealer;
-    Player player[8];
  
     char box;
     bool result;
@@ -20,10 +19,20 @@ void Game::init()
     std::cout << "How many players are playing the game? " << std::endl;
     std::cin >> numPlayers;
 
+    if (numPlayers > 3){ 
+        std::cout << "Too many players, returning error..." << std::endl;
+        return 0;
+    }
+
+    Player player[numPlayers];
+
+    for (int j = 1; j <= numPlayers; j++) {
+        player[j-1].setId(j);
+    }
+
     for (int i = 0; i < 10; i++) {
         dealerTurn(dealer, deck, i, numPlayers);
         for (int j = 0; j < numPlayers; j++) {
-            player[j].setId(j+1);
             playersTurn(dealer, deck, player[j], i, j+1);
         }
     }
@@ -37,6 +46,8 @@ void Game::init()
         }
     }
     std::cout << "Player " << maxScoreId << " wins the game!" << std::endl;
+
+    return 1;
 }
 
 
@@ -54,14 +65,16 @@ void Game::playersTurn(Dealer &dealer, Deck &deck, Player &player, int round, in
 {
     int cardReceived;
     bool result;
-    char box;
+    char box = 'a';
 
     cardReceived = dealer.dealCard();
 
     std::cout << "--------------------PLAYER " << playerId << "--------------------" << std::endl;
 
+    while (box != 'n' && box != 'y') {
     std::cout << "Is your card in between? [y/n]" << std::endl;
     std::cin >> box;
+    }
 
     result = dealer.checkBetween(cardReceived);
     
