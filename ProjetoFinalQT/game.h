@@ -23,28 +23,31 @@ class Game : public QWidget {
         Player * player;
 
 
-        QGridLayout * grid;
+        QGridLayout * grid = new QGridLayout;
 
-        QPushButton * btnYes;
-        QPushButton * btnNo;
-        QPushButton * confirm;
-        QPushButton * start;
+        QPushButton * btnYes = new QPushButton;
+        QPushButton * btnNo = new QPushButton;
+        QPushButton * confirm = new QPushButton;
+        QPushButton * start = new QPushButton;
 
-        QLabel * text;
-        QLabel * turn;
-        QLabel * card1;
-        QLabel * card2;
-        QLabel * points;
+        QLabel * text = new QLabel;
+        QLabel * turn = new QLabel;
+        QLabel * card1 = new QLabel;
+        QLabel * card2 = new QLabel;
+        QLabel * points = new QLabel;
 
 
         void init();
-        std::tuple<int, int> dealerTurn(Dealer dealer, Deck deck);
         bool playersTurn(Player player, Dealer dealer, Deck deck);
         void nextTurn();
         int getRound();
 
         void startGame();
         void enableStart();
+
+        void hideWidgets();
+        void showWidgets();
+        void configWidgets();
 
     private:
         int cardReceived;
