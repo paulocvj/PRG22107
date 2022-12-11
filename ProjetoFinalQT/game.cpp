@@ -1,14 +1,19 @@
+#include <iostream>
+#include <string>
 #include <QtWidgets>
 #include <tuple>
-#include <iostream>
 #include <QObject>
+#include <QThread>
+
 #include "game.h"
 
 Game::Game(QWidget *parent)
     : QWidget(parent) {
 
     QWidget * window = new QWidget();
-    window->resize(800,600);
+    window->setStyleSheet("background.jpg");
+    window->setMinimumHeight(600);
+    window->setMinimumWidth(800);
 
     configWidgets();
 
@@ -26,14 +31,14 @@ Game::Game(QWidget *parent)
 
     connect(start, &QPushButton::released, [=]{
         showWidgets();
-        window->resize(800,600);
+
         dealer->takeCard(*deck);
         deck->popArr();
-        card1->setText(QString::number(dealer->dealFirstCard()));
+        card1->setText(displayCard(dealer->dealFirstCard()));
         deck->popArr();
-        card2->setText(QString::number(dealer->dealSecondCard()));
+        card2->setText(displayCard(dealer->dealSecondCard()));
         deck->popArr();
-        turn->setText("Rodada " + QString::number(round));
+        turn->setText("Round " + QString::number(round));
     });
 
     connect(btnYes, &QPushButton::released, [=] {
@@ -45,28 +50,27 @@ Game::Game(QWidget *parent)
     });
 
     connect(confirm, &QPushButton::released, [=]{
+        yourCard->setText("Last card -> " + displayCard(dealer->dealCardPlayer()));
         if (playersTurn(*player, *dealer, *deck))
             player->addPoints();
         dealer->takeCard(*deck);
         deck->popArr();
         points->setText("Points: " + QString::number(player->getPoints()));
-        card1->setText(QString::number(dealer->dealFirstCard()));
+        card1->setText(displayCard(dealer->dealFirstCard()));
         deck->popArr();
-        card2->setText(QString::number(dealer->dealSecondCard()));
+        card2->setText(displayCard(dealer->dealSecondCard()));
         deck->popArr();
         nextTurn();
-        turn->setText("Rodada " + QString::number(round));
+        turn->setText("Round " + QString::number(round));
 
         btnYes->setChecked(false);
         btnNo->setChecked(false);
 
         if (getRound() > 10)
         {
-            btnYes->hide();
-            btnNo->hide();
-            confirm->hide();
-            window->setLayout(grid);
+            endGame();
         }
+
     });
 
 
@@ -97,6 +101,18 @@ bool Game::playersTurn(Player player, Dealer dealer, Deck deck)
     return dealer.checkBetween(player.getCard(), player.getAnswer());
 }
 
+QString Game::displayCard(int card)
+{
+    QString strCard;
+    if (card <= 10) strCard = QString::number(card);
+    else if (card == 11) strCard = 'J';
+    else if (card == 12) strCard = 'Q';
+    else if (card == 13) strCard = 'K';
+    else if (card == 14) strCard = 'A';
+
+    return strCard;
+}
+
 void Game::hideWidgets()
 {
     btnYes->setVisible(false);
@@ -107,6 +123,18 @@ void Game::hideWidgets()
     btnNo->setVisible(false);
     confirm->setVisible(false);
     points->setVisible(false);
+    yourCard->setVisible(false);
+}
+
+void Game::endGame()
+{
+    hideWidgets();
+    points->setVisible(true);
+    text->setVisible(true);
+    yourCard->setVisible(true);
+    turn->setVisible(true);
+    turn->setText("");
+    text->setText("Game is over!");
 }
 
 void Game::showWidgets()
@@ -120,6 +148,7 @@ void Game::showWidgets()
     confirm->setVisible(true);
     start->setVisible(false);
     points->setVisible(true);
+    yourCard->setVisible(true);
 }
 
 void Game::configWidgets()
@@ -129,6 +158,12 @@ void Game::configWidgets()
     text->setText("Is your card in between?");
     card1->setText("");
     card2->setText("");
+    yourCard->setText("Your card");
+    points->setAlignment(Qt::AlignCenter);
+    text->setAlignment(Qt::AlignCenter);
+    card1->setAlignment(Qt::AlignCenter);
+    card2->setAlignment(Qt::AlignCenter);
+    yourCard->setAlignment(Qt::AlignCenter);
 
     /* Button 1 for yes creation */
     btnYes->setText("Yes");
@@ -150,18 +185,19 @@ void Game::configWidgets()
 
     start->setText("START");
     start->setMinimumHeight(90);
-    start->setGeometry(470, 430, 200, 90);
+    start->setMaximumWidth(100);
 
     /* Grid defs */
-    grid->addWidget(text, 0, 2);
-    grid->addWidget(points, 0, 3);
+    grid->addWidget(text, 1, 2);
+    grid->addWidget(points, 0, 4);
     grid->addWidget(turn, 0, 0);
-    grid->addWidget(card1, 1, 1);
+    grid->addWidget(card1, 2, 1);
     grid->addWidget(start, 1, 2);
-    grid->addWidget(card2, 1, 3);
-    grid->addWidget(btnYes, 2, 0);
-    grid->addWidget(btnNo, 2, 4);
-    grid->addWidget(confirm, 2, 2);
+    grid->addWidget(card2, 2, 3);
+    grid->addWidget(yourCard, 3, 2);
+    grid->addWidget(btnYes, 4, 0);
+    grid->addWidget(btnNo, 4, 4);
+    grid->addWidget(confirm, 4, 2);
     grid->setSpacing(30);
     grid->setSizeConstraint(QLayout::SetMaximumSize);
 }

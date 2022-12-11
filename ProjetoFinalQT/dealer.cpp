@@ -48,7 +48,6 @@ bool Dealer::checkBetween(int cardToCheck, bool answer)
     std::cout << gameCards[0] << " - " << gameCards[1] << std::endl;
     if ((cardToCheck > gameCards[0] && cardToCheck < gameCards[1]) || (cardToCheck > gameCards[1] && cardToCheck < gameCards[0])){
         between = true;
-        //std::cout << "between: " << between << std::endl;
     }
     else between = false;
 

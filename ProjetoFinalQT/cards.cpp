@@ -1,11 +1,6 @@
 #include <iostream>
 #include "cards.h"
 
-// Cards::Cards()
-// {
-//     std::cout << "Creating cards" << std::endl;
-// };
-
 void Cards::printCards()
 {
     std::string cast;
@@ -21,4 +16,3 @@ void Cards::printCards()
             }
         }
 }
-

@@ -5,8 +5,6 @@
 #include <array>
 #include <queue>
 
-#include "cards.h"
-
 struct arrCards {
     int num;
     std::string suit;

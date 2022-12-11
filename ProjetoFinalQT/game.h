@@ -7,7 +7,9 @@
 #include <QThread>
 #include <tuple>
 #include <QPushButton>
+#include <string>
 
+#include "cards.h"
 #include "deck.h"
 #include "dealer.h"
 #include "player.h"
@@ -22,7 +24,6 @@ class Game : public QWidget {
         Dealer * dealer;
         Player * player;
 
-
         QGridLayout * grid = new QGridLayout;
 
         QPushButton * btnYes = new QPushButton;
@@ -35,19 +36,20 @@ class Game : public QWidget {
         QLabel * card1 = new QLabel;
         QLabel * card2 = new QLabel;
         QLabel * points = new QLabel;
+        QLabel * yourCard = new QLabel;
 
-
-        void init();
-        bool playersTurn(Player player, Dealer dealer, Deck deck);
+/* ----- Game functions ----- */
         void nextTurn();
         int getRound();
-
-        void startGame();
-        void enableStart();
-
+        bool playersTurn(Player player, Dealer dealer, Deck deck);
+/* -------------------------- */
+/* ----- Config functions ----- */
+        QString displayCard(int card);
         void hideWidgets();
         void showWidgets();
         void configWidgets();
+        void endGame();
+/* ---------------------------- */
 
     private:
         int cardReceived;
