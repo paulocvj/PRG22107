@@ -45,11 +45,6 @@ void Deck::shuffle()
     std::shuffle(array.begin(), array.end(), g);
 }
 
-void Deck::getArrPos(int num)
-{
-    std::cout << array[num-1].num << " de " << array[num-1].suit << std::endl;
-}
-
 void Deck::popArr()
 {
     for (int i = 0; i < 52; i++){

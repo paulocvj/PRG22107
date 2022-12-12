@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <array>
-#include <queue>
 
 struct arrCards {
     int num;

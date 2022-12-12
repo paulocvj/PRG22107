@@ -1,11 +1,11 @@
 #include "game.h"
 #include <QApplication>
 
-Game * game;
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    Game * game;
 
     game = new Game();
 

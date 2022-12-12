@@ -28,7 +28,9 @@ int Dealer::turnBoardCards()
 
 int Dealer::dealCardPlayer()
 {
+#ifdef DEBUG
     std::cout << "Player card: " << gameCards[2] << std::endl;
+#endif
     return gameCards[2];
 }
 
@@ -45,7 +47,9 @@ int Dealer::dealSecondCard()
 bool Dealer::checkBetween(int cardToCheck, bool answer)
 {
     bool between;
+#ifdef DEBUG
     std::cout << gameCards[0] << " - " << gameCards[1] << std::endl;
+#endif
     if ((cardToCheck > gameCards[0] && cardToCheck < gameCards[1]) || (cardToCheck > gameCards[1] && cardToCheck < gameCards[0])){
         between = true;
     }

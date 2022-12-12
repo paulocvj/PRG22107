@@ -1,11 +1,11 @@
 #include <iostream>
 #include <string>
 #include <QtWidgets>
-#include <tuple>
-#include <QObject>
 #include <QThread>
 
 #include "game.h"
+
+//#define DEBUG
 
 Game::Game(QWidget *parent)
     : QWidget(parent) {
@@ -25,34 +25,43 @@ Game::Game(QWidget *parent)
 
     deck->build();
     deck->shuffle();
+#ifdef DEBUG
     deck->printDeck();
-
+#endif
     hideWidgets();
 
     connect(start, &QPushButton::released, [=]{
         showWidgets();
 
+        /* Takes 3 cards, pops them all from the deck array */
         dealer->takeCard(*deck);
         deck->popArr();
         card1->setText(displayCard(dealer->dealFirstCard()));
         deck->popArr();
         card2->setText(displayCard(dealer->dealSecondCard()));
         deck->popArr();
+        /* ------------------------------------------------ */
+
         turn->setText("Round " + QString::number(round));
     });
 
     connect(btnYes, &QPushButton::released, [=] {
+        if (btnNo->isChecked()) btnNo->setChecked(false);
         player->setAnswer(true);
     });
 
     connect(btnNo, &QPushButton::released, [=] {
+        if (btnYes->isChecked()) btnYes->setChecked(false);
         player->setAnswer(false);
     });
 
     connect(confirm, &QPushButton::released, [=]{
         yourCard->setText("Last card -> " + displayCard(dealer->dealCardPlayer()));
+        /* boolean function, checks if player made the right call */
         if (playersTurn(*player, *dealer, *deck))
             player->addPoints();
+        /* ------------------------------------------------------ */
+        /* Takes another 3 cards and so on until round 10 */
         dealer->takeCard(*deck);
         deck->popArr();
         points->setText("Points: " + QString::number(player->getPoints()));
@@ -62,6 +71,7 @@ Game::Game(QWidget *parent)
         deck->popArr();
         nextTurn();
         turn->setText("Round " + QString::number(round));
+        /* ------------------------------------------------------ */
 
         btnYes->setChecked(false);
         btnNo->setChecked(false);
@@ -70,7 +80,6 @@ Game::Game(QWidget *parent)
         {
             endGame();
         }
-
     });
 
 
@@ -146,9 +155,9 @@ void Game::showWidgets()
     card2->setVisible(true);
     btnNo->setVisible(true);
     confirm->setVisible(true);
-    start->setVisible(false);
     points->setVisible(true);
     yourCard->setVisible(true);
+    start->setVisible(false);
 }
 
 void Game::configWidgets()
