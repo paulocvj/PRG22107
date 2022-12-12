@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-09479c448fa127d677fb.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ProjetoFinalQT",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ProjetoFinalQT::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ProjetoFinalQT-Debug-2754d539ffd1ea1ac67b.json",
+					"name" : "ProjetoFinalQT",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ProjetoFinalQT_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ProjetoFinalQT_autogen-Debug-dc0679aebb174a8ca2c8.json",
+					"name" : "ProjetoFinalQT_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ProjetoFinalQT_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ProjetoFinalQT_autogen_timestamp_deps-Debug-6b02bb31eb146839aaf1.json",
+					"name" : "ProjetoFinalQT_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Paulo/Documents/PRG22107/ProjetoFinalQT/build-ProjetoFinalQT-Desktop-Debug",
+		"source" : "C:/Users/Paulo/Documents/PRG22107/ProjetoFinalQT/ProjetoFinalQT"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

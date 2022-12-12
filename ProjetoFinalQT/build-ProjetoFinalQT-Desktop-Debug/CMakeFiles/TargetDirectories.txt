@@ -1,0 +1,9 @@
+C:/Users/Paulo/Documents/PRG22107/ProjetoFinalQT/build-ProjetoFinalQT-Desktop-Debug/CMakeFiles/ProjetoFinalQT.dir
+C:/Users/Paulo/Documents/PRG22107/ProjetoFinalQT/build-ProjetoFinalQT-Desktop-Debug/CMakeFiles/edit_cache.dir
+C:/Users/Paulo/Documents/PRG22107/ProjetoFinalQT/build-ProjetoFinalQT-Desktop-Debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Paulo/Documents/PRG22107/ProjetoFinalQT/build-ProjetoFinalQT-Desktop-Debug/CMakeFiles/list_install_components.dir
+C:/Users/Paulo/Documents/PRG22107/ProjetoFinalQT/build-ProjetoFinalQT-Desktop-Debug/CMakeFiles/install.dir
+C:/Users/Paulo/Documents/PRG22107/ProjetoFinalQT/build-ProjetoFinalQT-Desktop-Debug/CMakeFiles/install/local.dir
+C:/Users/Paulo/Documents/PRG22107/ProjetoFinalQT/build-ProjetoFinalQT-Desktop-Debug/CMakeFiles/install/strip.dir
+C:/Users/Paulo/Documents/PRG22107/ProjetoFinalQT/build-ProjetoFinalQT-Desktop-Debug/CMakeFiles/ProjetoFinalQT_autogen_timestamp_deps.dir
+C:/Users/Paulo/Documents/PRG22107/ProjetoFinalQT/build-ProjetoFinalQT-Desktop-Debug/CMakeFiles/ProjetoFinalQT_autogen.dir

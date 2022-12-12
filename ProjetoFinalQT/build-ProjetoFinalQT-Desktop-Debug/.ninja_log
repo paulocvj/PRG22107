@@ -1,0 +1,13 @@
+# ninja log v5
+4	1424	6925555410742018	ProjetoFinalQT_autogen/timestamp	ee605acba3f9a3a7
+4	1424	6925555410742018	ProjetoFinalQT_autogen/mocs_compilation.cpp	ee605acba3f9a3a7
+4	1424	6925555410742018	C:/Users/Paulo/Documents/PRG22107/ProjetoFinalQT/build-ProjetoFinalQT-Desktop-Debug/ProjetoFinalQT_autogen/timestamp	ee605acba3f9a3a7
+4	1424	6925555410742018	C:/Users/Paulo/Documents/PRG22107/ProjetoFinalQT/build-ProjetoFinalQT-Desktop-Debug/ProjetoFinalQT_autogen/mocs_compilation.cpp	ee605acba3f9a3a7
+1464	1618	6925555414652468	CMakeFiles/ProjetoFinalQT.dir/player.cpp.obj	660eba8e8b11fa38
+1445	2371	6925555422234634	CMakeFiles/ProjetoFinalQT.dir/cards.cpp.obj	2bcb4d8b00d6dbc1
+1450	3139	6925555429880303	CMakeFiles/ProjetoFinalQT.dir/deck.cpp.obj	2545e3e4f4d429c1
+1454	5468	6925555453192247	CMakeFiles/ProjetoFinalQT.dir/dealer.cpp.obj	233eb364849dccac
+1425	5518	6925555453706267	CMakeFiles/ProjetoFinalQT.dir/main.cpp.obj	f0d6c8ee10f2fdd4
+1441	5741	6925555455930302	CMakeFiles/ProjetoFinalQT.dir/ProjetoFinalQT_autogen/mocs_compilation.cpp.obj	e90d4de75fb1c9c0
+1459	11501	6925555513531903	CMakeFiles/ProjetoFinalQT.dir/game.cpp.obj	7ab579c511009778
+11505	11802	6925555516505578	ProjetoFinalQT.exe	907510e48ef44048
