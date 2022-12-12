@@ -31,3 +31,5 @@ Um jogo é iniciado. O baralho é embaralhado e o dealer dá as cartas, sendo as
 ## Diagrama de classes
 
 Abaixo está o diagrama de classes do projeto no QT.
+
+![Diagrama de classes](https://raw.githubusercontent.com/paulocvj/PRG22107/main/Class_diagram.png)
