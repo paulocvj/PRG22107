@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.5)
 
 project(InbetweenPRG22107 VERSION 0.1 LANGUAGES CXX)
 
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
@@ -13,12 +15,12 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
-        main.cpp
-        game.cpp game.h
-        deck.cpp deck.h
-        dealer.cpp dealer.h
-        cards.cpp cards.h
-        player.cpp player.h
+    main.cpp
+    game.cpp game.h
+    deck.cpp deck.h
+    dealer.cpp dealer.h
+    cards.cpp cards.h
+    player.cpp player.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
